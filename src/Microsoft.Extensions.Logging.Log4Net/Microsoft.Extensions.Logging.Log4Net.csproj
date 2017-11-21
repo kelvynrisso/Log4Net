@@ -7,11 +7,20 @@
     <Copyright>Copyright © 2017 Raju Joseph</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description></Description>
+    <Description>A log4net logging provider for net standard 2.0</Description>
+    <PackageProjectUrl>https://github.com/gundumon/Log4Net</PackageProjectUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageTags>log4net; net standard 2.0;</PackageTags>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile></DocumentationFile>
+    <OutputPath>..\..\artifacts\debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\artifacts\release\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
