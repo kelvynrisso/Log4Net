@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Extensions.Logging.Log4Net", "src\Microsoft.Extensions.Logging.Log4Net\Microsoft.Extensions.Logging.Log4Net.csproj", "{10D5FBD3-2B83-4633-9532-155A52403D40}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A19A862-F019-485F-94EC-C2AA5B862635}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "packages", "packages", "{9CF7C07C-F806-48AA-9ACF-138C0A1E927F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10D5FBD3-2B83-4633-9532-155A52403D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10D5FBD3-2B83-4633-9532-155A52403D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10D5FBD3-2B83-4633-9532-155A52403D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10D5FBD3-2B83-4633-9532-155A52403D40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10D5FBD3-2B83-4633-9532-155A52403D40} = {5A19A862-F019-485F-94EC-C2AA5B862635}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C90CB802-485B-46D9-A98E-2AD3068388C4}
+	EndGlobalSection
+EndGlobal
