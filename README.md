@@ -1,5 +1,5 @@
 # Log4Net Logging Provider for .NET Standard 2.0
-This project implements logging provider for [log4net] (http://logging.apache.org/log4net/) library.
+This project implements logging provider for [log4net](http://logging.apache.org/log4net/) library.
 
 ## License
 
