@@ -29,7 +29,7 @@
       private static ILoggerProvider CreateLog4NetProvider(string configFileName) {
          var fileName = string.IsNullOrEmpty(configFileName) ? "log4net.config" : configFileName;
 
-         return new Log4NetLoggerProvider(configFileName);
+         return new Log4NetLoggerProvider(fileName);
       }
    }
 }
