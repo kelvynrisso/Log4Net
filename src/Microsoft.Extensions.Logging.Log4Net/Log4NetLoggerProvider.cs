@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -17,7 +18,7 @@ namespace Microsoft.Extensions.Logging.Log4Net {
       }
 
       private Log4NetLogger CreateLoggerImplementation(string categoryName) {
-         var repository = log4net.LogManager.GetRepository(Assembly.GetEntryAssembly());
+         var repository = log4net.LogManager.GetRepository(Assembly.GetEntryAssembly() ?? GetCallingAssemblyFromStartup(categoryName));
 
          if (log4net.LogManager.GetCurrentLoggers(repository.Name).Count() == 0) {
             log4net.Config.XmlConfigurator.Configure(repository, new FileInfo(_configFileName));
@@ -25,6 +26,24 @@ namespace Microsoft.Extensions.Logging.Log4Net {
 
          var logger = log4net.LogManager.GetLogger(repository.Name, categoryName);
          return new Log4NetLogger(logger);
+      }
+
+      /// <summary>
+      /// Tries to retrieve the assembly from a type on categoryName.
+      /// </summary>
+      /// <returns>Null for NetCoreApp 1.1 otherwise try to get Assembly categoryName type if found in assemblies.</returns>
+      private static Assembly GetCallingAssemblyFromStartup(string categoryName)
+      {
+#if NETCOREAPP1_1
+         return null;
+#else
+         var objectType = (from asm in AppDomain.CurrentDomain.GetAssemblies()
+                           from type in asm.GetTypes()
+                           where type.FullName == categoryName
+                           select type).FirstOrDefault();
+
+         return objectType?.Assembly;
+#endif
       }
 
       public void Dispose() {
